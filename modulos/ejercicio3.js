@@ -1,21 +1,16 @@
-function registrarActividad(actividad){
-    const { nombre, notas } = usuario
+function registrarActividad(actividad) {
+  try {
+    const { nombre, notas } = actividad;
+
+    if (!nombre || !notas) {
+      throw new Error("La actividad no tiene nombre o notas");
+    }
+
+    return { nombre, notas };
+  } catch (error) {
+    console.log("Error al registrar actividad:", error.message);
+    return null;
+  }
 }
 
-try{
-    if (!nombre || !notas)
-    throw new Error("La ");
-} catch(error){
-    console.log(error.message);
-    
-}
-
-const usuario ={
-    nombre: "Dan",
-    fecha: "22/11/2025",
-    notas: [1, 2, 3]
-}
-
-registrarActividad(usuario)
-
-export { registrarActividad } from './ejercicio3.js'
+export { registrarActividad };

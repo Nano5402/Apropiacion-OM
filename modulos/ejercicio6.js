@@ -19,4 +19,4 @@ function detallesPrimerProducto(){
 //Y aqui simplemente hago el log de detallesPrimerProducto donde me dará el precio, sus unidades y el valor TOTAL, es decir precio * unidades.
 console.log(detallesPrimerProducto());
 
-export { detallesPrimerProducto } from './ejercicio6.js'
+export { detallesPrimerProducto }
