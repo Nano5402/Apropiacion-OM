@@ -1,4 +1,4 @@
-import { procesarPedido, agregarInventario, registrarActividad, configuracionUsuario, actualizarPerfil, detallesPrimerProducto } from "./modulos/index.js";
+import { procesarPedido, agregarInventario, registrarActividad, configuracionUsuario, actualizarPerfil, detallesPrimerProducto, evaluar, fusionarColecciones } from "./modulos/index.js";
 
 // Ejercicio 1
 const pedido = { cliente: "Paulo", producto: "Computador", cantidad: 25 };
@@ -25,3 +25,18 @@ console.log("Perfil actualizado:", resultado);
 
 // Ejercicio 6
 console.log(detallesPrimerProducto());
+
+// Ejercicio 7
+console.log("Promedio válido:", evaluar(10, 20, 30)); // → 20
+console.log("Con error:", evaluar(10, "hola", 30));   // → null y muestra mensaje de error
+
+// Ejercicio 8
+const listaA = ["Camara", "Tripode"];
+const listaB = ["Microfono", "Luz"];
+
+const resultadoFusion = fusionarColecciones(listaA, listaB);
+console.log("Colección fusionada:", resultadoFusion);
+
+// Ejemplo con error
+const resultadoFusionError = fusionarColecciones(listaA, "no es arreglo");
+console.log("Con error:", resultadoFusionError);
